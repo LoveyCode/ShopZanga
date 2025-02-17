@@ -1,0 +1,20 @@
+.sell-space{
+    width: 100%;
+    background: #ececec;
+    height: 40px;
+    display: flex;
+     gap: 600px;
+     padding: 10px;
+
+     box-shadow: 0 1px 3px -2px black;
+
+}
+.sell-space p{
+    color: rgb(255, 159, 159);
+    margin-left: 200px;
+    font-size: larger;
+    font-weight: 400;
+    cursor: pointer;
+
+   
+}

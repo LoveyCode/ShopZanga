@@ -1,0 +1,147 @@
+.related-products{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    align-items: center;
+}
+.related-products-container{
+    width: 1300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.related-products h1{
+    font-size: 2rem;
+    margin-top: 50px;
+    font-weight: 600;
+    color: #626262;
+}
+.related-products hr{
+    width: 1300px;
+        border: none;
+        height: 0.5px;   
+        color: #c9c9c9;  
+        background-color: #c9c9c9;
+        display: block; 
+        margin-top: 50px;
+}
+.relatedproducts-item{
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+@media(max-width:820px){
+    .related-products{
+        height: 100vh;
+    }
+    .related-products-container{
+        width: 820px;
+    }
+    .related-products h1{
+        color: #171717;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .related-products hr{
+        width: 500px;
+        margin-left: 155px; 
+    }
+    .relatedproducts-item{
+        margin-top: 50px;
+        margin-left: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+@media(max-width:768px){
+    .related-products{
+        height: 100vh;
+    }
+    .related-products-container{
+        width: 820px;
+    }
+    .related-products h1{
+        color: #171717;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .related-products hr{
+        width: 500px;
+        margin-left: 155px; 
+    }
+    .relatedproducts-item{
+        margin-top: 50px;
+        margin-left: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+@media(max-width:425px){
+    .related-products{
+        height: auto;
+        width: 425px;
+    }
+    .related-products-container{
+        width: 425px;
+    }
+    .related-products h1{
+        font-size: 1rem;
+        margin-left: 0px;
+    }
+    .related-products hr{
+        width: 300px;
+        margin-left: 65px;
+    }
+    .relatedproducts-item{
+        margin-left: 25px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+} 
+@media(max-width:375px){
+    .related-products{
+        height: auto;
+        width: 375px;
+    }
+    .related-products-container{
+        width: 375px;
+    }
+    .related-products h1{
+        font-size: 1rem;
+        margin-left: 0px;
+    }
+    .related-products hr{
+        width: 250px;
+        margin-left: 60px;
+    }
+    .relatedproducts-item{
+        margin-left: 10px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+} 
+@media(max-width:320px){
+    .related-products{
+        width: 320px;
+    }
+    .related-products-container{
+        width: 320px;
+    }
+    .related-products h1{
+        font-size: 1rem;
+    }
+    .related-products hr{
+        width: 250px;
+        margin-left: 35px;
+    }
+} 
