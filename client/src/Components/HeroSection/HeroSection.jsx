@@ -1,4 +1,7 @@
 import React from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import './HeroSection.css';
 import { Link } from 'react-router-dom';
 import new_arrival_right_btn from '../Assets/new_arrival_right_btn.png';
@@ -6,108 +9,79 @@ import new_arrival_right_btn from '../Assets/new_arrival_right_btn.png';
 
 
 
-
-
-function HeroSection () {
-  // const [menu, setMenu] = useState("shop")
-
-
-  //   const settings = {
-  //       infinite: true,
-  //       dots: true,
-  //       speed:50,
-  //       slidesToShow: 1,
-  //       autoplay: true,
-  //       autoplaySpeed: 3000,
-  //       slidesToScroll: 1,
-  //     };
-    
-
-
-  return (
-    <div className="hero">
-    <div className="hero-left">
-    <div className='side-navbar'>
-    <ul className="navbar-container">
-    <li><Link to='/'>Shop</Link> </li>
-      <li> <Link to='/men'> Men</Link> </li>
-      <li><Link to='/women'>Women</Link> </li>
-    <li><Link to='/kids'>Kids</Link></li>
-    </ul>
-    </div>
-    <div className="hero-text">
-      <h4> WELCOME TO ZANGA SHOP </h4>
-      <div className="hero-text-intro">
-      <h1>Trendy <br /> collections <br />for everyone </h1>
-      <p>Modern, affordable fashion for every occasion. <br />Discover your perfect look today!</p>
-      </div>
-      <button>New Arrivals <img className='btn-icon' src={new_arrival_right_btn} alt="" /></button>
-      </div>
-    </div>
-
-<div className="hero-right">
-
-<div className="hero-middle-image">
-  <div className="image-one"></div>
-  <div className="image-two"></div> 
-  </div>
-  
-  <div className="hero-right-image">
-  <div className="image-three"></div>
-  </div>
-</div>
-
-    </div>
-  )
+const sliderSettings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 3500,
+  cssEase: "ease-in-out",
 }
 
 
-export default HeroSection;
+const bannerImages = [
+  "/banner1.png",
+  "/banner2.png",
+  "/banner3.png",
+  "/banner4.png"
+];
 
 
-   /* <div className='hero_container'>
-    <div className='side-navbar'>
-    <ul className="list_container">
-    <li><Link to='/'>Shop</Link> </li>
-    <li><Link to='/men' >Men</Link> </li>
-    <li><Link to='/women' >Women  </Link></li>
-    <li><Link to='/kids' >Kids  </Link></li>
-    </ul>
-    </div> */
+function HeroSection() {
+  return (
+    <div className="hero">
+      <div className="hero-left">
+        <nav className="side-navbar">
+          <ul className="navbar-container">
+            <li><Link to='/'>Shop</Link></li>
+            <li><Link to='/men'>Men</Link></li>
+            <li><Link to='/women'>Women</Link></li>
+            <li><Link to='/kids'>Kids</Link></li>
+          </ul>
+        </nav>
 
 
-
-/* 
-     <div className='advert_container'>
-    <Slider {...settings}>
-
-     
-    <div className='sliding'>
-    <img src={zangaAnimination4}  alt="" />
-    </div> 
- 
-    <div className='sliding'>
-    <img src={zangaAnimination3} alt="" />
-    </div>
-   <div className='sliding'>
-    <img src={advert1} alt="" />
+<div className="hero-banner-container">
+  <Slider {...sliderSettings} className="desktop-slider">
+    {bannerImages.map((src, i) => (
+      <div key={i} className="banner-slide">
+        <img src={src} 
+        alt={`banner-${i}`} 
+        className="banner-img" />
       </div>
-      <div className='sliding'>
-      <img src={advert2} alt="" />
+    ))}
+  </Slider>
+
+  {/* <div className="mobile-card-slider">
+    {bannerImages.map((src, i) => (
+      <div key={i} className="mobile-card">
+        <img src={src} alt={`card-${i}`} className="mobile-card-img" />
       </div>
-      <div className='sliding'>
-     <img src={advert3} alt="" />
+    ))}
+  </div> */}
 </div>
 
-</Slider>
+          <button>
+            New Arrivals
+            <img className="btn-icon" src={new_arrival_right_btn} alt="right arrow" />
+          </button>
+       
+      </div>
 
+      {/* <div className="hero-right">
+        <div className="hero-middle-image">
+          <div className="image-one"></div>
+          <div className="image-two"></div>
+        </div>
+        <div className="hero-right-image">
+          <div className="image-three"></div>
+        </div>
+      </div> */}
     </div>
+  );
+}
 
-<div className="best_deals_container">
-    <ul className="best_deals_list">
-    <li>CALL TO ORDER</li>
-    <li>Sell on Zanga</li>
-    <li>Best Deals</li>
-    </ul>
-    </div>
-    </div>  */
+export default HeroSection;
