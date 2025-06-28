@@ -1,0 +1,12 @@
+Before i continue i want to create a branch on my github and migrate 
+from master to main but maintaining the code in master to main, leave main and and go to branch then
+ add my code to branch and commit to branch
+
+git branch -m master main
+git push -u origin main
+git symbolic-ref refs/remotes/origin/HEAD refs/remotes/origin/main
+git checkout -b feature/banner-design
+git add .
+git commit -m "Add responsive banner slider with autoplay"
+git push -u origin feature/banner-design
+

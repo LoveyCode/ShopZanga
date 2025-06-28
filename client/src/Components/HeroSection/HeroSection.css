@@ -3,16 +3,16 @@
 
 .hero{
     display: flex;
-    height: auto;
     width: 100%; 
     position: relative;
-    background-color: #b90404;
+
  
 }
 .hero-left{
-    width: 55%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 
 }
 .hero-text{
@@ -70,7 +70,7 @@
     transform: translateX(-10px);
 }
 .hero-right{
-    width: 45%;
+    width: 50%;
     display: flex;
     margin-top: 0; 
     padding-bottom: 1rem;
@@ -633,136 +633,84 @@ margin-top: 0px;
     }
     }
 
-/* .container{
+
+
+.hero-banner-container {
+  width: auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  height: auto;
+}
+
+.desktop-slider {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 12px;
+}
+
+.mobile-card-slider {
+  display: none;
+}
+
+/* Banner Image Styling */
+.banner-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.banner-slide {
+ width: 100%;
+  height: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.slick-dots li button:before {
+  color: white;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: red; /* or your brand color */
+}
+
+/* Mobile Cards */
+.mobile-card-slider {
+  display: none;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0.5rem 0;
+}
+
+.mobile-card {
+  flex: 0 0 auto;
+  width: 80%;
+  max-width: 300px;
+  scroll-snap-align: start;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.mobile-card-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Hide desktop slider on small screens */
+@media (max-width: 768px) {
+  .desktop-slider {
+    display: none;
+  }
+
+  .mobile-card-slider {
     display: flex;
-    height: auto;
-    width: 100%; 
-    position: relative; 
-} */
-
-/* .nav-container{
-display: none;
+  }
 }
-
-
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 50px;
-    color: #626262;
-    font-weight: 500;
-    font-size: 20px;
-}
-
-
-.hero_container{
-    display: flex;
-    gap: 16px;
-    width: 100%;
-    justify-content: center;
-    z-index: 1;
-    top: 16px;
-  
-  
-}
-
-.side-navbar{
-    background: #ececec;
-    height: 250px;
-    width: 200px;
-    border-radius: 5px;
-
-}
-
-.list_container{
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 16px;
-    color: #626262;
-    font-weight: 500;
-    font-size: 20px;
-    padding: 16px;
-  
-}
-
-.list_container :link {
-    text-decoration: none;
-   
-}
-
-.list_container :hover{
-    color: red;
-}
-
-
-.advert_container{
-    height: 350px;
-    width: 1200px; 
-    background: transparent;
-    border-radius: 5px;
-    position: relative;
-    
-}
-
-
-.best_deals_container{
-    background: #ececec;
-    height: 200px;
-    width: 200px;
-    border: 1px solid #ececec;
-    border-radius: 5px;
-}
-.best_deals_list{
-    justify-content: space-around;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 16px;
-    color: #626262;
-    font-weight: 500;
-    font-size: 20px;
-    padding: 16px;
-}
-
-@media(max-width:1280px){
-    .hero_container{
-       display: none;
-    }
-
-   .small-device-hero{
-    display: flex;
-   } */
-    /* .nav-container{
-        position: fixed;
-        transition: all .3s ease-in;
-        z-index: 4;
-        display: flex;
-        height: 40px;
-        width: 1280px;
-        top: 11%;
-    }
-    .sell-space{
-       max-width: 1280px;
-        background: #ececec;
-        height: 40px;
-        display: flex;
-         align-items: center;
-         justify-content: left;
-        padding-left: 300px;
-         box-shadow: 0 1px 3px -2px black;
-         position: sticky;
-         transition: all .3s ease-in;
-    }
-    .nav-menu li {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        cursor: pointer;
-    
-} */
-
-
-/* 1280, 1024, 800 */
