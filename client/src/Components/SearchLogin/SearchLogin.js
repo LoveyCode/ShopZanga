@@ -99,6 +99,7 @@ const product = all_product.find((e)=> e.id === Number (productId))
         </div>
     </div>
   
+  {/* small device nav */}
        <div className="small-device-search">
         <img className='nav-icon' onClick={navbarMenuToggle} src={navbar_menu_icon} alt="" />
         <div ref={menuRef}  className="nav-menu-space">
@@ -111,7 +112,16 @@ const product = all_product.find((e)=> e.id === Number (productId))
             </ul> 
 
             </div>
-        <input className='icon-search' type="text" id='search' placeholder='Search..'/>
+
+            {/* small device search input */}
+        <input className='icon-search'
+         type="text" 
+         id='search' 
+         placeholder='Search..'
+          autoComplete='off' 
+          value={searchInput}
+          onChange={handleSearchChange}
+         />
         <button className="small_search_button">Search</button>
         </div>
         {
