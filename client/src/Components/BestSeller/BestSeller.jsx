@@ -10,17 +10,26 @@ function BestSeller(props) {
     const {addToCart, addToWishlist} = useContext(ShopContext);
   const notification = () => toast.success(`${props.name} has been added to cart`);
   const wishlistnotification = () => toast.success(`${props.name} has been added to wishlist`);
+
+
+  const backendUrl = 'https://zanga-dtb7.onrender.com';
+  const imageUrl = `${backendUrl}/images/${props.image}`;
+
   return (
  
     <div className="item"> 
    
-<Link to={`/product/${props.id}`}><img  src={props.image} alt="" /> </Link>
+<Link to={`/product/${props.id}`}><img   src={imageUrl} alt="" /> </Link>
 <Toaster />
 <div className="item-description">
-<Link to={`/product/${props.id}`}><img className='item-description-big-img'  src={props.image} alt="" /> </Link>
+<Link to={`/product/${props.id}`}>
+<img className='item-description-big-img'  
+   src={imageUrl} alt={props.name} /> 
+</Link>
+
 <div className="item-description-images">
 
- <img onClick={() =>{addToCart(props.id); notification()}}src={cart} className='cart' alt="cart" /> 
+ <img onClick={() =>{addToCart(props.id); notification()}} src={cart} className='cart' alt="cart" /> 
  <img onClick={() =>{ addToWishlist(props.id); wishlistnotification()}} src={heart} className='heart-icon' alt="wish-list" /> 
  </div>
  </div>
