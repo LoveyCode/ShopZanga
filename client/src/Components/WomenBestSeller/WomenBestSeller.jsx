@@ -28,8 +28,17 @@ const WomenBestSeller= () => {
 
       <div className="best-seller-item">
         {popularProduct.map((item, i)=>{
-            return <BestSeller product={item} key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
-        })}
+              const imageUrl = `${backendUrl}/images/${item.image}`;
+            return <BestSeller 
+            product={item} 
+            key={i} 
+            id={item.id} 
+            name={item.name}  
+            image={imageUrl} 
+            new_price={item.new_price}
+             old_price={item.old_price}
+             />
+               })}
         </div> 
         </div>
     </div>
