@@ -1,4 +1,4 @@
-import { useEffect, useState,  useContext  } from 'react';
+import { useEffect, useState  } from 'react';
 
 
 import './MenBestSeller.css';
@@ -13,7 +13,7 @@ const MenBestSeller= () => {
   const [popularProduct, setpopularProduct]=useState([])
 
   useEffect(() =>{
-    fetch('http://localhost:4000/popular/men')
+    fetch('https://zanga-dtb7.onrender.com/popular/men')
     .then((response)=>response.json())
     .then((data)=>setpopularProduct(data))
 

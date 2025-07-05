@@ -33,11 +33,11 @@ npm run dev
 🔌 API Integration
 Main endpoints used:
 
-POST http://localhost:4000/addproduct
+POST https://zanga-dtb7.onrender.com/addproduct
 
-POST http://localhost:4000/removeproduct
+POST https://zanga-dtb7.onrender.com/removeproduct
 
-GET http://localhost:4000/allproducts
+GET https://zanga-dtb7.onrender.com/allproducts
 
 
 📸 Image Upload

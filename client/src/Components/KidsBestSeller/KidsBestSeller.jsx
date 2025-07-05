@@ -1,6 +1,4 @@
-import React, { useEffect, useState,  useContext  } from 'react';
-import { useParams } from 'react-router-dom';
-import { ShopContext } from '../../Context/ShopContent';
+import React, { useEffect, useState  } from 'react';
 import './KidsBestSeller.css';
 import BestSeller from '../BestSeller/BestSeller';
 
@@ -11,7 +9,7 @@ const KidsBestSeller= () => {
   const [popularProduct, setPopular_product]=useState([])
 
   useEffect(() =>{
-    fetch('http://localhost:4000//popular/kids')
+    fetch('https://zanga-dtb7.onrender.com//popular/kids')
     .then((response)=>response.json())
     .then((data)=>setPopular_product(data))
   },[])

@@ -27,9 +27,9 @@ npm start
 
 
 ## 🔌 API Integration
-All product and user data is fetched from the Express backend at http://localhost:4000.
+All product and user data is fetched from the Express backend at https://zanga-dtb7.onrender.com.
 
-fetch('http://localhost:4000/popular/men')
+fetch('https://zanga-dtb7.onrender.com/popular/men')
   .then(res => res.json())
 
 
