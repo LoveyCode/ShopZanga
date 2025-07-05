@@ -8,7 +8,7 @@ import BestSeller from '../BestSeller/BestSeller';
 
 const WomenBestSeller= () => {
 
-
+  const backendUrl = 'https://zanga-dtb7.onrender.com';
 
   const [popularProduct, setPopular_product]=useState([])
 
