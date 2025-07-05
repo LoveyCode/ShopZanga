@@ -4,6 +4,7 @@ import BestSeller from '../BestSeller/BestSeller';
 
 const KidsBestSeller= () => {
 
+  const backendUrl = 'https://zanga-dtb7.onrender.com';
 
 
   const [popularProduct, setPopular_product]=useState([])
