@@ -1,58 +1,35 @@
-.container2{
-    position: relative;
-    top: 0px;
-    transition: all .3s ease-in;
-    z-index: 4;
-    width: 100%;
+
+
+/* Responsive: horizontal menu on small screen */
+@media (max-width: 768px) {
+/* Make navbar sit on top of the hero banner */
+.side-navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 10;
+  padding: 1.5rem 2rem;
 }
 
-.sell-space{
-    width: 100%;
-   border: 1px solid #ececec;
-    background: transparent;
-    height: 40px;
-    display: flex;
-     padding: 10px;
-     align-items: center;
-     justify-content: space-around;
-     box-shadow: 0 1px 3px -2px black;
-     z-index: 4;
-     position: relative;
-     top: 25px;
-     transition: all .3s ease-in
-
+/* Horizontal layout for nav items */
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 200px;
-    color: #626262;
-    font-weight: 500;
-    font-size: 20px;
+/* Style for nav links */
+.navbar-container li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.7);
 }
-
-.nav-menu li{
-    cursor: pointer;
-    text-decoration: none;
-  
-}
-
-
-.nav-menu li a:link, :visited, :active{
-    text-decoration: none;
-    color: inherit;
-}
-
-.nav-menu li a:hover{
-    color: rgb(212, 97, 97);
-}
-
-@media(max-width:1280px){
-     .sell-space{
-        width: 1280;
-        display: none;
-    
-    }
 }

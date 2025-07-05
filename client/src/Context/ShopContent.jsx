@@ -1,4 +1,4 @@
-import React, {createContext, useEffect, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import newproduct1 from '../Components/Assets/New_Collections'
 
 

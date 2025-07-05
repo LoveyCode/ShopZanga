@@ -69,7 +69,7 @@ vel sagittis lacus placerat. Quisque non volutpat nulla, ac ullamcorper arcu.</p
         <Toaster />
         <button onClick={() =>{addToWishlist(product.id); wishlistnotification()}}>ADD TO WISHLIST</button>
         </div>
-        <p className='productDisplay-right-category'> <span>Category :</span> Women, T-Shirt, Crop Top</p>
+        <p className='productDisplay-right-category'> <span>Category :</span> {product.category}</p>
         <p className='productDisplay-right-category'> <span>Tags :</span> Modern, Latest</p>
     </div>
 

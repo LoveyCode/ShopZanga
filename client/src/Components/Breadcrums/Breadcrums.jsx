@@ -1,49 +1,19 @@
-import React from 'react'
-import './Breadcrums.css'
-import { Link, useLocation } from 'react-router-dom';
-// import {Box, Breadcrumbs, Link, Typography} from '@mui/material'
 
-const Breadcrums = (props) => {
-  //  const {product} = props;
-  // const location = useLocation()
+import './Breadcrums.css';
+import { Link } from 'react-router-dom';
 
-  
+const Breadcrums = ({ name, product }) => {
+  const formatName = name?.charAt(0).toUpperCase() + name?.slice(1).toLowerCase(); // Capitalize
 
-  // let currentLink = ''
-
-  // const crumbs = location.pathname.split('/')
-  // .filter(crumb => crumb !== '')
-  // .map(crumb => {
-  //   currentLink =+ `/${crumb}`
-
-  //   return (
-  //     <div className='crumb' key={crumb}>
-  //    <Link to ={currentLink}> {crumb} </Link>
-  //    </div>
-  //      )
-  // })
-   
   return (
- <div className='breadcrums'>
-  <p className='breadcrums-link'> 
-<Link to='/'>HOME <i class="ri-arrow-drop-right-line"></i></Link> 
-<Link to='/'>SHOP <i class="ri-arrow-drop-right-line"></i></Link> 
-{props.name}
-</p>  
-
-
-</div>
-  )
+    <div className='breadcrums'>
+       <p className="breadcrums-link">
+        <Link to="/">Home</Link> / <Link to="/">Product</Link> /{' '}
+        <span>{product?.id}</span>
+        {name && <> / <Link to={`/${name}`}>{formatName}</Link></>}
+      </p>  
+    </div>
+  );
 }
 
-export default Breadcrums
-
-
-
-{/* <Box m={2}>
-<Breadcrumbs separator='-'>
-  <Link underline='hover' href='/'>Shop</Link>
-  <Link underline='hover' href={product.category}>{product.category}</Link>
-  <Link underline='hover' href={product.name}>{product.name}</Link>
-</Breadcrumbs>
-</Box> */}
+export default Breadcrums;

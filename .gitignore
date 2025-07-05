@@ -2,11 +2,6 @@
 .env
 
 server/index2.js
-server/controllers/
-server/middlewares/
-server/routes/
-server/schemas/
-server/config/
 server/node_modules/
 
 
@@ -34,3 +29,4 @@ yarn-error.log*
 client/node_modules/
 client/node_modules/
 client/node_modules/
+.documentation.txt

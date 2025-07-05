@@ -1,26 +1,25 @@
-import React, { useEffect, useState,  useContext  } from 'react';
-import { useParams } from 'react-router-dom';
-import { ShopContext } from '../../Context/ShopContent';
+import { useEffect, useState } from 'react';
+
+
 import './WomenBestSeller.css';
 
 
 import BestSeller from '../BestSeller/BestSeller';
 
 const WomenBestSeller= () => {
-  const {all_product} = useContext(ShopContext)
-  const {productId} = useParams();
-const product = all_product.find((e)=> e.id === Number (productId))
+
 
 
   const [popularProduct, setPopular_product]=useState([])
 
   useEffect(() =>{
-    fetch('http://localhost:4000/popularinwomen')
+    fetch('http://localhost:4000/popular/women')
     .then((response)=>response.json())
     .then((data)=>setPopular_product(data))
   },[])
 
   return (
+      <div className="best-seller-wrapper">
 <div className='best-seller-container'>
 <div className="best-seller">
 <hr />
@@ -29,10 +28,11 @@ const product = all_product.find((e)=> e.id === Number (productId))
 
       <div className="best-seller-item">
         {popularProduct.map((item, i)=>{
-            return <BestSeller product={product} key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
+            return <BestSeller product={item} key={i} id={item.id} name={item.name} image={item.image} new_price={item.new_price} old_price={item.old_price}/>
         })}
         </div> 
         </div>
+    </div>
     </div>
  
   )

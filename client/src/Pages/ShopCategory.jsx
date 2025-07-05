@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import './css/ShopCategory.css';
 import { ShopContext } from '../Context/ShopContent';
 import BestSeller from '../Components/BestSeller/BestSeller';
-import Navbar from '../Components/Navbar/Navbar';
 import Breadcrums from '../Components/Breadcrums/Breadcrums';
 
 
@@ -11,8 +10,8 @@ const ShopCategory = (props) => {
   const {all_product} = useContext(ShopContext);
   return (
     <>
-      <Navbar />
-  <Breadcrums /> 
+  
+  <Breadcrums name={props.category} /> 
     <div className='shop-category'>
     <img className='shopCategory-banner' src={props.banner} alt="" />
     <div className="shopCategory-indexSort">

@@ -1,87 +1,119 @@
-import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './HeroSection.css';
-import { Link } from 'react-router-dom';
-import new_arrival_right_btn from '../Assets/new_arrival_right_btn.png';
+import "./HeroSection.css";
+import HeroBottomCards from "../HerobottomCards/HeroBottomCards";
+import { FaPhoneAlt, FaHandshake, FaStore, FaShippingFast } from "react-icons/fa";
 
 
 
 
 const sliderSettings = {
   dots: true,
+  customPaging: (i) => (
+    <div
+      style={{
+        width: "10px",
+        height: "10px",
+        borderRadius: "50%",
+        backgroundColor: "#b90404",
+      }}
+    />
+  ),
   infinite: true,
-  speed: 500,
+  speed: 400,
   slidesToShow: 1,
   slidesToScroll: 1,
   arrows: false,
   autoplay: true,
-  autoplaySpeed: 3500,
+  autoplaySpeed: 2500,
   cssEase: "ease-in-out",
-}
-
+};
 
 const bannerImages = [
   "/banner1.png",
   "/banner2.png",
   "/banner3.png",
-  "/banner4.png"
+  "/banner4.png",
+];
+
+const cardLogos = [
+  "/logo1.png",
+  "/logo2.png",
+  "/logo3.png",
+  "/logo4.png",
+  "/logo5.png",
+  "/logo6.png",
+  "/logo7.png",
 ];
 
 
-function HeroSection() {
+const CardSliderSettings = {
+  dots: false,
+  infinite: true,
+  speed: 1000,                 // controls transition speed
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  fade: true,                 // 🔥 key for smooth glow transition
+  cssEase: "ease-in-out"
+};
+
+
+
+
+export default function HeroSection() {
   return (
-    <div className="hero">
-      <div className="hero-left">
-        <nav className="side-navbar">
-          <ul className="navbar-container">
-            <li><Link to='/'>Shop</Link></li>
-            <li><Link to='/men'>Men</Link></li>
-            <li><Link to='/women'>Women</Link></li>
-            <li><Link to='/kids'>Kids</Link></li>
-          </ul>
-        </nav>
+    <div className="hero-wrapper">
+     <div className="hero-top">
+  <div className="hero-slider">
+    <Slider {...sliderSettings}>
+      {bannerImages.map((src, i) => (
+        <div key={i}>
+          <img src={src} alt={`banner-${i}`} className="banner-img" />
+        </div>
+      ))}
+    </Slider>
 
+    {/* Custom horizontal scroll slider for small screens */}
+    <div className="hero-slider-alt">
+      {bannerImages.map((src, i) => (
+        <img key={i} src={src} alt={`banner-${i}`} className="banner-alt-img" />
+      ))}
+    </div>
+  </div>
 
-<div className="hero-banner-container">
-  <Slider {...sliderSettings} className="desktop-slider">
-    {bannerImages.map((src, i) => (
-      <div key={i} className="banner-slide">
-        <img src={src} 
-        alt={`banner-${i}`} 
-        className="banner-img" />
+  <div className="hero-right-cards">
+    {/* Call to Order card */}
+    <div className="hero-side-card">
+      <div className="side-card-content">
+        <p><FaPhoneAlt className="side-icon" /> Call to Order</p>
+        <p><FaHandshake className="side-icon" /> Partner with Us</p>
+        <p><FaStore className="side-icon" /> Sell on Zanga</p>
+        <p><FaShippingFast className="side-icon" /> Send Your Packages</p>
       </div>
-    ))}
-  </Slider>
+    </div>
 
-  {/* <div className="mobile-card-slider">
-    {bannerImages.map((src, i) => (
-      <div key={i} className="mobile-card">
-        <img src={src} alt={`card-${i}`} className="mobile-card-img" />
+    {/* Logo slider */}
+    <div className="hero-side-card2">
+      <div className="side-card-images">
+        <div className="logo-slider-container">
+          <Slider {...CardSliderSettings}>
+            {cardLogos.map((logo, i) => (
+              <div key={i} className="logo-slide">
+                <img src={logo} alt={`logo-${i}`} className="logo-img" />
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
-    ))}
-  </div> */}
+    </div>
+  </div>
 </div>
 
-          <button>
-            New Arrivals
-            <img className="btn-icon" src={new_arrival_right_btn} alt="right arrow" />
-          </button>
-       
-      </div>
-
-      {/* <div className="hero-right">
-        <div className="hero-middle-image">
-          <div className="image-one"></div>
-          <div className="image-two"></div>
-        </div>
-        <div className="hero-right-image">
-          <div className="image-three"></div>
-        </div>
-      </div> */}
+<HeroBottomCards />
     </div>
   );
 }
-
-export default HeroSection;

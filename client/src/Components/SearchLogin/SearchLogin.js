@@ -1,13 +1,10 @@
-import React, { useRef, useContext, useState, useEffect} from 'react';
+
+import { useRef, useContext, useState, useEffect} from 'react';
 import './SearchLogin.css';
 import logo from '../Assets/logo.png';
-import cart from '../Assets/cart.png';
-import heart from '../Assets/heart.png';
-import login_icon from '../Assets/login_icon.png'
 import navbar_menu_icon from '../Assets/navbar_menu_icon.png'
 import navbar_close from '../Assets/navbar_close.png';
-import search_icon from '../Assets/search_icon.png';
-import cross_icon from '../Assets/cross_icon.png'
+import { FiShoppingCart, FiHeart, FiUser } from "react-icons/fi";
 import { Link, useParams } from 'react-router-dom';
 import { ShopContext } from '../../Context/ShopContent';
 import SearchDetails from '../SearchDetails/SearchDetails';
@@ -20,54 +17,34 @@ const {productId} = useParams();
 const product = all_product.find((e)=> e.id === Number (productId))
 
 
+  const menuRef = useRef();
 
-const menuRef = useRef();
+  const [searchInput, setSearchInput] = useState("");
+  const [searchData, setSearchData] = useState([]);
 
-const [search, setSearch]= useState([]);
-const [searchData, setSearchData] = useState([])
-const [searchInput, setSearchInput] = useState("")
-const [selectedItem, setSelectedItem] = useState(-1)
+  const handleSearchChange = (e) => {
+    setSearchInput(e.target.value);
+  };
 
-// const handleChange = e => {
-//   setSearch(e.target.value)
-// }
-// passing search in the dependency array[] means that search will run whenever we change value
+  useEffect(() => {
+    if (searchInput !== "") {
+      fetch('http://localhost:4000/allproducts')
+        .then((response) => response.json())
+        .then((data) => {
+          const filtered = data.filter((f) =>
+            f.name.toLowerCase().includes(searchInput.toLowerCase())
+          );
+          setSearchData(filtered);
+        });
+    } else {
+      setSearchData([]);
+    }
+  }, [searchInput]);
 
-useEffect (() => {
-if(searchInput !=="") {
-fetch ('http://localhost:4000/allproducts')
-.then((response) => response.json())
-.then((data) => setSearch(data)
-)}
-}, [search])
-
-const filterdata = (event) =>{
-  setSearchInput(event.target.value)
-  setSearchData(search.filter( f => f.name.toLowerCase().includes(event.target.value)))
-}
-
-const navbarMenuToggle = (e) => {
-menuRef.current.classList.toggle('nav-menu-visible');
-e.target.classList.toggle('open')
-}
-
-// const handleClose= () => {
-//   setSearch("")
-//   setSearchData([])
-// }
-
-// const handleKeyDown = e =>{
-//   if (e.key === "ArrowUp" && selectedItem > 0){
-//     setSelectedItem(prev => prev -1)
-//   }
-//   else if (e.key === "ArrowDowm" && selectedItem < searchData.length -1){
-//     setSelectedItem(prev => prev +1)
-//   }
-//   else if (e.key === "Enter" && selectedItem >= 0){
-//     window.open(searchData[selectedItem].product)
-//   }
-// }
-
+  const navbarMenuToggle = (e) => {
+    menuRef.current.classList.toggle('nav-menu-visible');
+    e.target.classList.toggle('open');
+  };
 
   return (
     <div className='container'>
@@ -80,37 +57,41 @@ e.target.classList.toggle('open')
          id='search'
           placeholder='Search Products & Categories' 
           autoComplete='off' 
-          onChange={filterdata}
-          // onKeyDown={handleKeyDown}
+          value={searchInput}
+          onChange={handleSearchChange}
           />
 
         <button className="search_button">Search</button>
         </div>
-
-
         </div>
+
+        
         <div className="search-login-cart">
-        {/* // if localStorage has auth-token */}
-        {localStorage.getItem('auth-token')
-        ?<button  onClick={()=>{localStorage.removeItem('auth-token'); window.location.replace('/')}}>Logout</button>
-            :<Link to='/login'> <img src={login_icon} className='login-icon' alt='login' /></Link>}
+          {localStorage.getItem('auth-token') ? (
+            <button onClick={() => {
+              localStorage.removeItem('auth-token');
+              window.location.replace('/');
+              
+            }}>Logout</button>
+          ) : (
+            <Link to='/login'><FiUser className='icon' /></Link>
+          )}
 
-            <Link to='/cart'><img src={cart} className='cart' alt="" /> </Link>
-            <div className="search-cart-count">
-            {getTotalCartItems ()}
-            </div>
-           <Link to='/wishlist'> <img src={heart} className='heart-icon' alt="" /> </Link>
-            <div className="search-cart-count">
-            {getTotalWishlistItems ()}
-            </div>
+          <Link to='/cart'><FiShoppingCart className='icon' /></Link>
+          <div className="search-cart-count">{getTotalCartItems()}</div>
+
+          <Link to='/wishlist'><FiHeart className='icon ' /></Link>
+          <div className="search-cart-count">{getTotalWishlistItems()}</div>
         </div>
-        </div>
+      </div>
+
+
 
         <hr />
         <div className='nav-block'>
      <div className='nav-inner-block'>
      <ul className= "nav-menu-list">
-            <li > <Link to='/'>Shop</Link> </li>
+            <li > <Link to='/'>Home</Link> </li>
             <li ><Link to='/men'> Men</Link></li>
             <li ><Link to='/women'>Women</Link></li>
             <li ><Link to='/kids'>Kids</Link></li>
@@ -122,7 +103,7 @@ e.target.classList.toggle('open')
         <img className='nav-icon' onClick={navbarMenuToggle} src={navbar_menu_icon} alt="" />
         <div ref={menuRef}  className="nav-menu-space">
         <ul  className= "nav-list">
-            <li > <Link to='/'>Shop</Link> </li>
+            <li > <Link to='/'>Home</Link> </li>
             <li ><Link to='/men'> Men</Link></li>
             <li ><Link to='/women'>Women</Link></li>
             <li ><Link to='/kids'>Kids</Link></li>
@@ -149,17 +130,11 @@ e.target.classList.toggle('open')
               new_price={data.new_price} 
               old_price={data.old_price}
 
-              // This can only work only if your map format will be in achor tag or Something that can 
-              // only show the name of the product not the whole schema, you cant add a classname to an 
-              // imported component
-
-              // className ={selectedItem === index ? 'search_suggestion-line active'
-              //   : 'search_suggestion-line' }
                />
       
           })
         }
-        {/* <img src={ navbar_close} className='result-box-close' onClick={handleClose} alt="" /> */}
+
         </div>
      </div> 
       
@@ -171,10 +146,11 @@ e.target.classList.toggle('open')
 }
 
 export default SearchLogin
-{/* */}
 
 
-{/* <li onClick={() => {setMenu("shop")}}> <Link to='/'>Shop</Link> {menu==="shop"?<hr/>:<></>} </li>
-<li onClick={() => {setMenu("men")}}><Link to='/men' > Men</Link> {menu==="men"?<hr/>:<></>}</li>
-<li onClick={() => {setMenu("women")}}><Link to='/women' >Women</Link> {menu==="women"?<hr/>:<></>}</li>
-<li onClick={() => {setMenu("kids")}}><Link to='/kids' >Kids</Link>{menu==="kids"?<hr/>:<></>}</li>  */}
+
+
+
+
+
+

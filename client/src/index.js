@@ -4,7 +4,8 @@ import App from './App';
 import "remixicon/fonts/remixicon.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ShopContextProvider from './Context/ShopContent';
+import ShopContextProvider from './Context/ShopContent'
+import './index.css'; 
 
 
 

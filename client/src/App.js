@@ -1,9 +1,10 @@
 import SearchLogin from './Components/SearchLogin/SearchLogin';
+
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import ShopCategory from  './Pages/ShopCategory';
 import Product from  './Pages/Product'
 import Cart from  './Pages/Cart'
-import Shop from  './Pages/Shop/Shop'
+import Home from  './Pages/Home/Home'
 import LoginSignup from  './Pages/LoginSignup'
 import Footer from './Components/Footer/Footer';
 import men_banner from './Components/Assets/men_banner.png';
@@ -13,14 +14,16 @@ import WishlistItems from './Components/WishlistItems/WishlistItems';
 
 
 
+
 function App() {
   return (
     <div >
     <BrowserRouter>
  <SearchLogin />
 
+
 <Routes>
-  <Route path='/' element={<Shop/>} />
+  <Route path='/' element={<Home/>} />
   <Route path='/men' element={<ShopCategory banner={men_banner} category = 'men'/>} />
   <Route path='/women' element={<ShopCategory banner={women_banner}  category = 'women'/>} />
   <Route path='/kids' element={<ShopCategory banner={kids_banner}  category = 'kids'/>} />
