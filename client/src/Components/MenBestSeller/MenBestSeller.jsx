@@ -7,7 +7,7 @@ import BestSeller from '../BestSeller/BestSeller';
 
 const MenBestSeller= () => {
 
-  const backendUrl = 'https://zanga-dtb7.onrender.com';
+
 
 
   const [popularProduct, setpopularProduct]=useState([])
@@ -30,13 +30,13 @@ const MenBestSeller= () => {
 
       <div className="best-seller-item">
         {popularProduct.map((item, i)=>{
-        const imageUrl = `${backendUrl}/images/${item.image}`;
+       
             return <BestSeller 
             product={item} 
             key={i} 
             id={item.id} 
             name={item.name}  
-            image={imageUrl} 
+            image={item.image} 
             new_price={item.new_price}
              old_price={item.old_price}
              />
