@@ -1,5 +1,4 @@
-import React from 'react';
-import './Shop.css';
+import './Home.css';
 import HeroSection  from '../../Components/HeroSection/HeroSection';
 import WomenBestSeller from '../../Components/WomenBestSeller/WomenBestSeller';
 import Offers from '../../Components/Offers/Offers';
@@ -10,7 +9,9 @@ import Newsletter from '../../Components/Newsletter/Newsletter';
 
 
 
-const Shop = () => {
+const Home = () => {
+
+
   return (
      <div className="content_body"> 
 <HeroSection />
@@ -25,4 +26,4 @@ const Shop = () => {
   )
 }
 
-export default Shop
+export default Home

@@ -44,5 +44,3 @@ ${props.new_price}
 
 export default BestSeller
 
-{/* <div className="hover-description"> {props.name}</div>
-<p className="hover-description"> {props.name}</p> */}

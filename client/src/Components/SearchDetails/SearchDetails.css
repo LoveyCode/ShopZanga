@@ -1,52 +1,80 @@
-.search-details{
-    width: 300px;
-    height: 100px;
-    display: flex;
-    gap: 16px;
-    margin-bottom: 16px;
+.search-details {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
 
+.search-details:hover {
+  background-color: #f9f9f9;
 }
-.search-details-left{
-    padding-left: 16px;
-    width: 40%;
-   
+
+.search-details-left img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
 }
-.search-details-left img{
-    width: 100px;
-    height: 100px;
-    
+
+.search-details-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
 }
-.search-details-right{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
+
+.search-details-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+  transition: color 0.2s ease;
 }
-.search-details-name{
-    color: #6a8ac4;
-    font-size: 18px;
-    font-weight: 600;
-    width: 300px;
-    margin-bottom: 10px;
-    margin-top: 10px;
+
+.search-details:hover .search-details-name {
+  color: #b90404;
 }
-.search-details-name a:link{
-text-decoration: none;
+
+.search-details-price {
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
-.search-details-name a:hover{
-   color: #b90404;
+
+.search-details-price-new {
+  font-weight: 600;
+  color: #000;
+  font-size: 1rem;
 }
-.search-details-price{
-    display: flex;
-    gap: 20px;
+
+.search-details-price-old {
+  font-size: 0.95rem;
+  text-decoration: line-through;
+  color: #6b7280;
 }
-.search-details-price-new{
-    color: #000000;
-    font-size: 18px;
-    font-weight: 600;
-}
-.search-details-price-old{
-    color: #374151;
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: line-through;
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .search-details {
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .search-details-left img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .search-details-name {
+    font-size: 0.95rem;
+  }
+
+  .search-details-price-new,
+  .search-details-price-old {
+    font-size: 0.9rem;
+  }
 }

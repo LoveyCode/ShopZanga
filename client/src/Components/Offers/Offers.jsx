@@ -1,4 +1,4 @@
-import React from 'react'
+
 import './Offers.css'
 import offerPics from '../Assets/offerPics.png';
 
