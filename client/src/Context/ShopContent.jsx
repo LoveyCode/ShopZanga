@@ -26,13 +26,13 @@ const ShopContextProvider = (props) => {
     const [wishlistItems, setWishlistItems] = useState(getDefaultWishlist())
 
     useEffect(() => {
-        fetch('http://localhost:4000/allproducts')
+        fetch('https://zanga-dtb7.onrender.com/allproducts')
             .then((response) => response.json())
             .then((data) => setAll_product(data));
     
   
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/getcart', { 
+            fetch('https://zanga-dtb7.onrender.com/getcart', { 
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -47,12 +47,12 @@ const ShopContextProvider = (props) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:4000/allproducts')
+        fetch('https://zanga-dtb7.onrender.com/allproducts')
             .then((response) => response.json())
             .then((data) => setAll_product(data));
     
         if (localStorage.getItem('auth-token')) {
-            fetch('http://localhost:4000/getwishlist', { 
+            fetch('https://zanga-dtb7.onrender.com/getwishlist', { 
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -70,7 +70,7 @@ const addToCart = (itemId) =>{
 setCartItems ((prev) =>({...prev, [itemId] :prev[itemId] +1}));
 
 if (localStorage.getItem('auth-token')){
-    fetch('http://localhost:4000/addtocart', {
+    fetch('https://zanga-dtb7.onrender.com/addtocart', {
         method: 'POST',
         headers:{
             Accept: 'application/form-data',
@@ -86,7 +86,7 @@ const removeFromCart = (itemId) =>{
     setCartItems ((prev) =>({...prev, [itemId] :prev[itemId] -1}))
 
     if (localStorage.getItem('auth-token')){
-        fetch('http://localhost:4000/removefromcart', {
+        fetch('https://zanga-dtb7.onrender.com/removefromcart', {
             method: 'POST',
             headers:{
                 Accept: 'application/form-data',
@@ -105,7 +105,7 @@ const removeFromCart = (itemId) =>{
         // LoginSignup, then we can fetch in the 2nd line
         if (localStorage.getItem('auth-token')){
            
-            fetch('http://localhost:4000/addtowishlist',{
+            fetch('https://zanga-dtb7.onrender.com/addtowishlist',{
                 method: 'POST',
                 headers:{
                     Accept: 'application/form-data',
@@ -121,7 +121,7 @@ const removeFromCart = (itemId) =>{
     const removeFromWishlist = (itemId) =>{
         setWishlistItems ((prev) =>({...prev, [itemId] :prev[itemId] -1}))
         if (localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/removefromwishlist',{
+            fetch('https://zanga-dtb7.onrender.com/removefromwishlist',{
                 method: 'POST',
                 headers:{
                     Accept: 'application/form-data',

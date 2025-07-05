@@ -28,7 +28,7 @@ const product = all_product.find((e)=> e.id === Number (productId))
 
   useEffect(() => {
     if (searchInput !== "") {
-      fetch('http://localhost:4000/allproducts')
+      fetch('https://zanga-dtb7.onrender.com/allproducts')
         .then((response) => response.json())
         .then((data) => {
           const filtered = data.filter((f) =>
