@@ -33,12 +33,12 @@ module.exports = {
     res.send(products.slice(1).slice(-15));
   },
   getPopularInWomen: async (req, res) => {
-    res.send(await Product.find({ category: 'women' }).limit(12));
+    res.send(await Product.find({ category: 'women' }).limit(8));
   },
   getPopularInMen: async (req, res) => {
-    res.send(await Product.find({ category: 'men' }).limit(12));
+    res.send(await Product.find({ category: 'men' }).limit(8));
   },
   getPopularInKids: async (req, res) => {
-    res.send(await Product.find({ category: 'kids' }).limit(12));
+    res.send(await Product.find({ category: 'kids' }).limit(8));
   }
 };
