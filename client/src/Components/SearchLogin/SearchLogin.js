@@ -104,11 +104,11 @@ const product = all_product.find((e)=> e.id === Number (productId))
         <img className='nav-icon' onClick={navbarMenuToggle} src={navbar_menu_icon} alt="" />
         <div ref={menuRef}  className="nav-menu-space">
         <ul  className= "nav-list">
-            <li > <Link to='/'>Home</Link> </li>
-            <li ><Link to='/men'> Men</Link></li>
-            <li ><Link to='/women'>Women</Link></li>
-            <li ><Link to='/kids'>Kids</Link></li>
-            <img className='nav-icon nav-menu-hidden' onClick={navbarMenuToggle} src={ navbar_close} alt="" />
+  <li><Link to="/" onClick={navbarMenuToggle}>Home</Link></li>
+  <li><Link to="/men" onClick={navbarMenuToggle}>Men</Link></li>
+  <li><Link to="/women" onClick={navbarMenuToggle}>Women</Link></li>
+  <li><Link to="/kids" onClick={navbarMenuToggle}>Kids</Link></li>
+  <img className="nav-icon nav-menu-hidden" onClick={navbarMenuToggle} src={navbar_close} alt="" />
             </ul> 
 
             </div>

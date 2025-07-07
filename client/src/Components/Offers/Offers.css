@@ -125,10 +125,10 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 435px) {
   .offers-left h1 {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 
   .offers-left p {
@@ -142,7 +142,7 @@
   }
 
   .offers-right img {
-    max-width: 250px;
+    max-width: 500px;
   }
 }
 

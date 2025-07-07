@@ -31,6 +31,7 @@ const sliderSettings = {
 };
 
 const bannerImages = [
+   "/banner.png",
   "/banner1.png",
   "/banner2.png",
   "/banner3.png",
@@ -45,6 +46,14 @@ const cardLogos = [
   "/logo5.png",
   "/logo6.png",
   "/logo7.png",
+];
+
+const mobileBannerImages = [
+  "/smallBanner1.png",
+ "/smallBanner2.png",
+ "/smallBanner3.png",
+  "/smallBanner4.png",
+   "/smallBanner5.png",
 ];
 
 
@@ -78,11 +87,11 @@ export default function HeroSection() {
     </Slider>
 
     {/* Custom horizontal scroll slider for small screens */}
-    <div className="hero-slider-alt">
-      {bannerImages.map((src, i) => (
-        <img key={i} src={src} alt={`banner-${i}`} className="banner-alt-img" />
-      ))}
-    </div>
+ <div className="hero-slider-alt">
+  {mobileBannerImages.map((src, i) => (
+    <img key={i} src={src} alt={`mobile-banner-${i}`} className="banner-alt-img" />
+  ))}
+</div>
   </div>
 
   <div className="hero-right-cards">

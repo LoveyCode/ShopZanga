@@ -1,5 +1,5 @@
 import React, { useEffect, useState  } from 'react';
-import './KidsBestSeller.css';
+import '../sharedcss/bestSellerLayout.css';
 import BestSeller from '../BestSeller/BestSeller';
 
 const KidsBestSeller= () => {

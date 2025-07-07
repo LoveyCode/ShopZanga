@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
+import '../sharedcss/bestSellerLayout.css';
 
-
-import './WomenBestSeller.css';
 
 
 import BestSeller from '../BestSeller/BestSeller';
