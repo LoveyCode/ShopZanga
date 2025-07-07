@@ -1,7 +1,5 @@
 import { useEffect, useState  } from 'react';
-
-
-import './MenBestSeller.css';
+import '../sharedcss/bestSellerLayout.css';
 
 import BestSeller from '../BestSeller/BestSeller';
 

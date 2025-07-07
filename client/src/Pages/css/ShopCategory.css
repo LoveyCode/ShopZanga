@@ -59,7 +59,7 @@ row-gap: 80px;
     .shopCategory-banner{
         display: block;
         margin: 30px auto;
-        width: 72%;
+        width: 80%;
     
     }
 }
@@ -68,7 +68,7 @@ row-gap: 80px;
     .shopCategory-banner{
         display: block;
         margin: 30px auto;
-        width: 72%;
+        width: 80%;
     }
 }
 
@@ -76,7 +76,7 @@ row-gap: 80px;
     .shopCategory-banner{
         display: block;
         margin: 30px auto;
-        width: 72%;
+        width: 80%;
     }
 
     .shopCategory-indexSort{
@@ -146,6 +146,12 @@ row-gap: 80px;
                 grid-template-columns: 1fr 1fr ;
                 row-gap: 80px;
                 }
+
+                     .shopCategory-loadmore{
+                    margin:  150px auto;
+                 
+                }
+                
 }
 @media(max-width:375px){
     .shopCategory-indexSort{

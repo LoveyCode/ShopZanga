@@ -7,9 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 const ProductDisplay = ({ product }) => {
   const { addToCart, addToWishlist } = useContext(ShopContext);
-  const backendUrl = 'https://zanga-dtb7.onrender.com';
-
-  const imageUrl = `${backendUrl}/images/${product.image}`;
+const imageUrl = product.image;
 
   const notification = () => toast.success(`${product.name} has been added to cart`);
   const wishlistNotification = () => toast.success(`${product.name} has been added to wishlist`);

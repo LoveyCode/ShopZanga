@@ -8,7 +8,7 @@ const Breadcrums = ({ name, product }) => {
   return (
     <div className='breadcrums'>
        <p className="breadcrums-link">
-        <Link to="/">Home</Link> / <Link to="/">Product</Link> /{' '}
+        <Link to="/">Home</Link> / <Link to="/">Product</Link> {' '}
         <span>{product?.id}</span>
         {name && <> / <Link to={`/${name}`}>{formatName}</Link></>}
       </p>  
