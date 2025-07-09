@@ -12,7 +12,9 @@ const port = 4000;
 app.use(express.json());
 
 const allowedOrigins = [
-  'https://zangaadmin.vercel.app',
+  'http://localhost:5173',
+    'http://localhost:4000',
+  'https://zangaa.vercel.app',
   'https://zangaadmin.vercel.app/admin-login' 
 ];
 
