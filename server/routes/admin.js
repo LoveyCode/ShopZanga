@@ -31,7 +31,7 @@ router.post('/admin/login', (req, res) => {
     res
       .cookie('adminToken', token, {
         httpOnly: true,
-        secure: false, // set to true on HTTPS/production
+        secure: true, // set to true on HTTPS/production
         sameSite: 'Lax',
         maxAge: 60 * 60 * 1000, // 1 hour
       })
