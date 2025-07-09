@@ -31,8 +31,8 @@ router.post('/admin/login', (req, res) => {
     res
       .cookie('adminToken', token, {
         httpOnly: true,
-        secure: true, // set to true on HTTPS/production
-        sameSite: 'Lax',
+        secure: true, 
+        sameSite: 'none', // if frontend and backend are on different domains
         maxAge: 60 * 60 * 1000, // 1 hour
       })
       .json({ success: true });
