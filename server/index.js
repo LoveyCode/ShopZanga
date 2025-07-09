@@ -10,10 +10,24 @@ const port = 4000;
 
 // Middleware
 app.use(express.json());
+
+const allowedOrigins = [
+  'https://zangaadmin.vercel.app/',
+  'https://zangaa.vercel.app/' 
+];
+
 app.use(cors({
-  origin: 'http://localhost:5173', // frontend URL
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   credentials: true,
 }));
+
+
 app.use('/images', express.static('upload/images'));
 
 
