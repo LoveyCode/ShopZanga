@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
-import './AdminLogin.css';
+import './adminLogin.css';
 
 const AdminLogin = () => {
   const [password, setPassword] = useState('');
