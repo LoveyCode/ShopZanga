@@ -12,8 +12,8 @@ const port = 4000;
 app.use(express.json());
 
 const allowedOrigins = [
-  'https://zangaadmin.vercel.app/',
-  'https://zangaa.vercel.app/' 
+  'https://zangaadmin.vercel.app',
+  'https://zangaadmin.vercel.app/admin-login' 
 ];
 
 app.use(cors({
