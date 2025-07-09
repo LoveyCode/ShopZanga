@@ -3,14 +3,24 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv").config();
+const cookieParser = require('cookie-parser');
 
 const app = express();
 const port = 4000;
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:5173', // frontend URL
+  credentials: true,
+}));
 app.use('/images', express.static('upload/images'));
+
+
+
+app.use(cookieParser());
+app.use(express.json());
+app.use('/', require('./routes/admin')); 
 
 // Connect to MongoDB
 mongoose.connect(process.env.DATABASE_KEY)
