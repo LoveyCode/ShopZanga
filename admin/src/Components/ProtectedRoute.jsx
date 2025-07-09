@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch('http://localhost:4000/admin/protected', {
+        const res = await fetch('https://zanga-dtb7.onrender.com/admin/protected', {
           credentials: 'include',
         });
         setAuthorized(res.ok);
