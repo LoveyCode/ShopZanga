@@ -3,6 +3,7 @@
 
 server/index2.js
 server/node_modules/
+server/scripts/
 
 
 # dependencies
