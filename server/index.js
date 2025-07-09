@@ -13,7 +13,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   'https://zangaa.vercel.app',
-  'https://zangaadmin.vercel.app/admin' 
+  'https://zangaadmin.vercel.app' 
 ];
 
 app.use(cors({
