@@ -12,12 +12,15 @@ const port = 4000;
 app.use(express.json());
 
 const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5173',
   'https://zangaa.vercel.app',
   'https://zangaadmin.vercel.app' 
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
+    console.log('Origin trying to connect:', origin);
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
