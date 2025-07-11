@@ -21,7 +21,9 @@ const KidsBestSeller= () => {
 
 <div className="best-seller">
 <hr />
+<div className='h1-container'> 
     <h1> BEST SELLERS FOR KIDS</h1>
+    </div>
    
 
       <div className="best-seller-item">
