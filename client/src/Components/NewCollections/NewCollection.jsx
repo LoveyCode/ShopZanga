@@ -20,7 +20,10 @@ useEffect(() =>{
 <div className='best-seller-container'>
 <div className="best-seller">
 <hr />
-<h1>NEW COLLECTIONS</h1>
+<div className='h1-container'> 
+   <h1>NEW COLLECTIONS</h1>
+    </div>
+
   
      <div className="best-seller-item">
         {new_collection.map((item, i)=>{

@@ -68,12 +68,11 @@
   .best-seller-wrapper {
   width: 100%;
   display: flex;
+  align-items: start;
   justify-content: center;
-  padding: 3rem 1rem;
-  margin-bottom: 3rem !important;
+  padding: 3rem 0px !important;
+  margin-bottom: 7rem !important;
   }
-
-
 
   .best-seller-container {
     width: 100%;
@@ -87,9 +86,6 @@
   }
 
 
-
-
-
   .best-seller-container hr {
 display: none;
   }
@@ -99,6 +95,7 @@ display: none;
   width: 100%;
   height: auto;
   background-color: #b90404;
+  border-radius: 5px;
 }
 
   .h1-container h1 {
@@ -110,9 +107,9 @@ display: none;
 
   .best-seller-item {
     display: grid !important;
-     grid-template-columns: repeat(2, 1fr)!important;
-     row-gap: 12rem !important;
-     column-gap: 0.5rem !important;
+    grid-template-columns: repeat(2, 1fr)!important;
+    row-gap: 12rem !important;
+    column-gap: 0.5rem !important;
   }
 }
 

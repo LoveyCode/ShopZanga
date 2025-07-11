@@ -64,6 +64,7 @@ cursor: pointer;
 @media(max-width:800px){
     .footer{
         gap: 20px;
+        margin-top: 150px;
     }
     .footer-logo{
         gap: 10px;
