@@ -21,7 +21,10 @@ const WomenBestSeller= () => {
 <div className='best-seller-container'>
 <div className="best-seller">
 <hr />
+<div className='h1-container'> 
     <h1>BEST SELLERS FOR WOMEN</h1>
+    </div>
+
    
 
       <div className="best-seller-item">

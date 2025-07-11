@@ -23,7 +23,11 @@ const MenBestSeller= () => {
 
 <div className="best-seller">
 <hr />
-    <h1> BEST SELLERS FOR MEN</h1>
+
+
+<div className='h1-container'> 
+    <h1>BEST SELLERS FOR MEN</h1>
+    </div>
    
 
       <div className="best-seller-item">

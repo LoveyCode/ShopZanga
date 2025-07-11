@@ -1,8 +1,7 @@
 import React, { useContext }from 'react'
 import './BestSeller.css'
 import { Link } from 'react-router-dom';
-import cart from '../Assets/cart.png';
-import heart from '../Assets/heart.png';
+import { FiShoppingCart, FiHeart } from "react-icons/fi";
 import { ShopContext } from '../../Context/ShopContent';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -24,9 +23,9 @@ return (
       <Link to={`/product/${props.id}`}>
         <img className='item-description-big-img' src={imageUrl} alt={props.name} />
       </Link>
-      <div className="item-description-images">
-        <img onClick={() => { addToCart(props.id); notification(); }} src={cart} className='cart' alt="cart" /> 
-        <img onClick={() => { addToWishlist(props.id); wishlistnotification(); }} src={heart} className='heart-icon' alt="wish-list" /> 
+      <div className="item-addcart-addwishlist">
+          <FiShoppingCart className='icon' onClick={() => { addToCart(props.id); notification(); }} /> 
+        <FiHeart className='icon' onClick={() => { addToWishlist(props.id); wishlistnotification(); }}  /> 
       </div>
     </div>
     <p className='item-link'>
@@ -35,6 +34,10 @@ return (
     <div className="item-prices">
       <div className="item-price-new">${props.new_price}</div>
       <div className="item-price-old">${props.old_price}</div>
+    </div>
+    <div className='mobile-addcart-addwishlist'>
+      <button onClick={() => { addToCart(props.id); notification(); }}>   <FiShoppingCart className='small-icon'/>  </button>
+      <button onClick={() => { addToWishlist(props.id); wishlistnotification(); }} >  <FiHeart className='small-icon' /> </button>
     </div>
   </div>
 );
