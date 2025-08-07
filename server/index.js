@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv").config();
 const cookieParser = require('cookie-parser');
+const passport = require('passport');
+const session = require('express-session');
+require('./config/passport'); // load the passport config
 
 const app = express();
 const port = 4000;
@@ -13,14 +16,14 @@ app.use(express.json());
 
 const allowedOrigins = [
   'http://localhost:3000',
-  'http://localhost:5173',
+  'http://localhost:4000',
   'https://zangaa.vercel.app',
   'https://zangaadmin.vercel.app' 
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
-    console.log('Origin trying to connect:', origin);
+
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -37,6 +40,17 @@ app.use('/images', express.static('upload/images'));
 
 app.use(cookieParser());
 app.use(express.json());
+app.use(session({
+  secret: 'zanga_oauth_secret',
+  resave: false,
+  saveUninitialized: true
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+
+
+
+
 app.use('/', require('./routes/admin')); 
 
 // Connect to MongoDB
@@ -45,6 +59,7 @@ mongoose.connect(process.env.DATABASE_KEY)
   .catch(err => console.error("MongoDB Error:", err));
 
 // Routes
+app.use('/', require('./routes/authRoute'));
 app.use('/', require('./routes/productRoutes'));
 app.use('/', require('./routes/userRoutes'));
 app.use('/', require('./routes/uploadRoutes'));

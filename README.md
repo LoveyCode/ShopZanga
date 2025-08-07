@@ -78,3 +78,7 @@ auth-token: <jwt_token_here>
 Passwords are hashed using bcrypt before saving to DB.
 
 JWT tokens expire after 10 minutes for security.
+
+from here modify
+
+npm install passport passport-google-oauth20 express-session
