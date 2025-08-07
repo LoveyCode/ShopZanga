@@ -11,6 +11,8 @@ import men_banner from './Components/Assets/men_banner.png';
 import women_banner from './Components/Assets/women_banner.png';
 import kids_banner from './Components/Assets/kids_banner.png';
 import WishlistItems from './Components/WishlistItems/WishlistItems';
+import OauthSuccess from './Pages/OauthSuccess';
+import ScrollToTop from './scrollToTop';
 
 
 
@@ -21,7 +23,7 @@ function App() {
     <BrowserRouter>
  <SearchLogin />
 
-
+   <ScrollToTop />
 <Routes>
   <Route path='/' element={<Home/>} />
   <Route path='/men' element={<ShopCategory banner={men_banner} category = 'men'/>} />
@@ -33,6 +35,8 @@ function App() {
   <Route path='/cart' element={<Cart/>} />
   <Route path='/wishlist' element={<WishlistItems/>}/>
   <Route path='/login' element={<LoginSignup />} />
+  <Route path="/oauth-success" element={<OauthSuccess />} />
+
 </Routes>
 <Footer />
 </BrowserRouter>

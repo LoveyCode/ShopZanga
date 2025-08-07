@@ -12,7 +12,7 @@ const WomenBestSeller= () => {
 
   useEffect(() =>{
     fetch('https://zanga-dtb7.onrender.com/popular/women')
-    .then((response)=>response.json())
+    .then((response)=>response.json()) 
     .then((data)=>setPopular_product(data))
   },[])
 
