@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c94dad96.css",
-    "main.js": "/static/js/main.8c0f4785.js",
+    "main.css": "/static/css/main.5ffd2e57.css",
+    "main.js": "/static/js/main.c51187bb.js",
     "static/media/remixicon.svg?t=1734404658139": "/static/media/remixicon.df9902a6df13645438e1.svg",
     "static/media/remixicon.eot?t=1734404658139": "/static/media/remixicon.29066d810a74e994be27.eot",
     "static/media/remixicon.ttf?t=1734404658139": "/static/media/remixicon.868d1a768f4762dbcc3e.ttf",
@@ -16,19 +16,17 @@
     "static/media/X_logo.png": "/static/media/X_logo.31ffb4baa87a4f9874e8.png",
     "static/media/Pinterest-logo.png": "/static/media/Pinterest-logo.8f0c34f44019fff319e4.png",
     "static/media/Facebook_Logo.png": "/static/media/Facebook_Logo.4f08992984a055fbc25b.png",
-    "static/media/cart.png": "/static/media/cart.8a8adaa1a28598ccd09e.png",
-    "static/media/heart.png": "/static/media/heart.93a87a97d982bcb9dbf9.png",
     "static/media/logo.png": "/static/media/logo.8d7ad1a69acd23c4c7d0.png",
     "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.c94dad96.css.map": "/static/css/main.c94dad96.css.map",
-    "main.8c0f4785.js.map": "/static/js/main.8c0f4785.js.map"
+    "main.5ffd2e57.css.map": "/static/css/main.5ffd2e57.css.map",
+    "main.c51187bb.js.map": "/static/js/main.c51187bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.c94dad96.css",
-    "static/js/main.8c0f4785.js"
+    "static/css/main.5ffd2e57.css",
+    "static/js/main.c51187bb.js"
   ]
 }

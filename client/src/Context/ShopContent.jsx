@@ -1,5 +1,6 @@
 import {createContext, useEffect, useState} from "react";
 import newproduct1 from '../Components/Assets/New_Collections'
+import Cookies from 'js-cookie';
 
 
 export const ShopContext = createContext(null);
@@ -31,12 +32,12 @@ const ShopContextProvider = (props) => {
             .then((data) => setAll_product(data));
     
   
-        if (localStorage.getItem('auth-token')) {
+        if (Cookies.get('auth_token')) {
             fetch('https://zanga-dtb7.onrender.com/getcart', { 
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
-                    'auth-token': localStorage.getItem('auth-token'),
+                    'auth-token': Cookies.get('auth_token'),
                     'Content-Type': 'application/json',
                 },
             })
@@ -51,12 +52,12 @@ const ShopContextProvider = (props) => {
             .then((response) => response.json())
             .then((data) => setAll_product(data));
     
-        if (localStorage.getItem('auth-token')) {
+        if (Cookies.get('auth_token')) {
             fetch('https://zanga-dtb7.onrender.com/getwishlist', { 
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
-                    'auth-token': localStorage.getItem('auth-token'),
+                    'auth-token': Cookies.get('auth_token'),
                     'Content-Type': 'application/json',
                 },
             })
@@ -69,12 +70,12 @@ const addToCart = (itemId) =>{
 
 setCartItems ((prev) =>({...prev, [itemId] :prev[itemId] +1}));
 
-if (localStorage.getItem('auth-token')){
+if (Cookies.get('auth_token')){
     fetch('https://zanga-dtb7.onrender.com/addtocart', {
         method: 'POST',
         headers:{
             Accept: 'application/form-data',
-            'auth-token': `${localStorage.getItem('auth-token')}`,
+            'auth-token': `${Cookies.get('auth_token')}`,
             'Content-Type': 'application/json',
         },
         body:JSON.stringify({'itemId':itemId}), 
@@ -85,12 +86,12 @@ if (localStorage.getItem('auth-token')){
 const removeFromCart = (itemId) =>{
     setCartItems ((prev) =>({...prev, [itemId] :prev[itemId] -1}))
 
-    if (localStorage.getItem('auth-token')){
+    if (Cookies.get('auth_token')){
         fetch('https://zanga-dtb7.onrender.com/removefromcart', {
             method: 'POST',
             headers:{
                 Accept: 'application/form-data',
-                'auth-token': `${localStorage.getItem('auth-token')}`,
+                'auth-token': `${Cookies.get('auth_token')}`,
                 'Content-Type': 'application/json',
             },
             body:JSON.stringify({'itemId':itemId}), 
@@ -103,13 +104,13 @@ const removeFromCart = (itemId) =>{
         setWishlistItems ((prev) =>({...prev, [itemId] :prev[itemId] +1}));
         // this line means if localStorage has the auth-token, that means we are 
         // LoginSignup, then we can fetch in the 2nd line
-        if (localStorage.getItem('auth-token')){
+        if (Cookies.get('auth_token')){
            
             fetch('https://zanga-dtb7.onrender.com/addtowishlist',{
                 method: 'POST',
                 headers:{
                     Accept: 'application/form-data',
-                    'auth-token': `${localStorage.getItem('auth-token')}`,
+                    'auth-token': `${Cookies.get('auth_token')}`,
                     'Content-Type': 'application/json',
                 },
                 body:JSON.stringify({'itemId':itemId}), 
@@ -120,12 +121,12 @@ const removeFromCart = (itemId) =>{
 
     const removeFromWishlist = (itemId) =>{
         setWishlistItems ((prev) =>({...prev, [itemId] :prev[itemId] -1}))
-        if (localStorage.getItem('auth-token')){
+        if (Cookies.get('auth_token')){
             fetch('https://zanga-dtb7.onrender.com/removefromwishlist',{
                 method: 'POST',
                 headers:{
                     Accept: 'application/form-data',
-                    'auth-token': `${localStorage.getItem('auth-token')}`,
+                    'auth-token': `${Cookies.get('auth_token')}`,
                     'Content-Type': 'application/json',
                 },
                 body:JSON.stringify({'itemId':itemId}), 

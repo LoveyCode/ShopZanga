@@ -2,6 +2,7 @@
 import { useRef, useContext, useState, useEffect} from 'react';
 import './SearchLogin.css';
 import logo from '../Assets/logo.png';
+import Cookies from 'js-cookie';
 import navbar_menu_icon from '../Assets/navbar_menu_icon.png'
 import navbar_close from '../Assets/navbar_close.png';
 import { FiShoppingCart, FiHeart, FiUser } from "react-icons/fi";
@@ -31,6 +32,8 @@ const product = all_product.find((e)=> e.id === Number (productId))
       fetch('https://zanga-dtb7.onrender.com/allproducts')
         .then((response) => response.json())
         .then((data) => {
+
+          // Filter products based on search input
           const filtered = data.filter((f) =>
             f.name.toLowerCase().includes(searchInput.toLowerCase())
           );
@@ -46,6 +49,8 @@ const product = all_product.find((e)=> e.id === Number (productId))
     e.target.classList.toggle('open');
   };
 
+  const token = Cookies.get('auth_token');
+  
   return (
     <div className='container'>
     <div className='search-bar'>
@@ -67,15 +72,15 @@ const product = all_product.find((e)=> e.id === Number (productId))
 
         
         <div className="search-login-cart">
-          {localStorage.getItem('auth-token') ? (
-            <button onClick={() => {
-              localStorage.removeItem('auth-token');
-              window.location.replace('/');
-              
-            }}>Logout</button>
-          ) : (
-            <Link to='/login'><FiUser className='icon' /></Link>
-          )}
+
+            {token ? (
+         <button onClick={() => {
+    Cookies.remove('auth_token');
+    window.location.replace('/');
+           }}>Logout</button>
+) : (
+  <Link to='/login'><FiUser className='icon' /></Link>
+)}
 
           <Link to='/cart'><FiShoppingCart className='icon' /></Link>
           <div className="search-cart-count">{getTotalCartItems()}</div>
